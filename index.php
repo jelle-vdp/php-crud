@@ -10,7 +10,7 @@
     require 'controllers/CoachesController.php';
 
     $controller = new StudentsController();
-    if(isset($_GET['page']) && $_GET['page'] === 'groups') {
+    if (isset($_GET['page']) && $_GET['page'] === 'groups') {
         $controller = new GroupsController();
     } else if(isset($_GET['page']) && $_GET['page'] === 'students') {
         $controller = new StudentsController();
