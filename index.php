@@ -10,11 +10,12 @@
     require 'controllers/CoachesController.php';
 
     $controller = new StudentsController();
+    
     if (isset($_GET['page']) && $_GET['page'] === 'groups') {
         $controller = new GroupsController();
-    } else if(isset($_GET['page']) && $_GET['page'] === 'students') {
+    } else if (isset($_GET['page']) && $_GET['page'] === 'students') {
         $controller = new StudentsController();
-    } else if(isset($_GET['page']) && $_GET['page'] === 'coaches') {
+    } else if (isset($_GET['page']) && $_GET['page'] === 'coaches') {
         $controller = new CoachesController();
     } 
 
