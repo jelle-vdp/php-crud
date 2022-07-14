@@ -3,18 +3,24 @@
 class TeacherController
 {
     private DatabaseLoader $databaseLoader;
+    private array $allTeachers;
 
     public function __construct() {
         $this->databaseLoader = new DatabaseLoader();
     }
 
-    public function render($get, $post)
-    {
+    public function getAllDataTeachers () {
         $sqlAllDataTeachers = $this->databaseLoader->getConnection()->query("SELECT * FROM teacher_table");
         $allDataTeachers = [];
         while ($row = $sqlAllDataTeachers->fetch()){
-            $allDataTeachers[] = new Teacher ($row[0], $row[1], $row[2]);
+            $allDataTeachers[] = new Teacher ($row['id'], $row['name'], $row['email']);
         }
+        $this->allTeachers = $allDataTeachers;
+    }
+
+    public function render($get, $post)
+    {
+        $this->getAllDataTeachers();
 
 
 

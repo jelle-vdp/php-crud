@@ -2,7 +2,7 @@
 
 require("views/includes/header.php");
 
-foreach ($allDataTeachers as $dataTeacher) {
+foreach ($this->allTeachers as $dataTeacher) {
     $teacherName = ucfirst($dataTeacher->getName());
     $teacherID = $dataTeacher->getID();
     $teacherEmail = $dataTeacher->getEmail();
