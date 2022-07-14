@@ -11,14 +11,17 @@ In order to start out with the assignment, we will clear the following TO-DO lis
 - [x] Create a router that selects different pages
 - [x] Create a .gitignore that ignores the .env, .gitignore, and if needed, the .idea/
 - [x] Add a .env.sample file to the repository
-- [ ] **Show our database on the view**
-  - [ ] Create a connection with the database
+- [x] **Show our database on the view**
+  - [x] Create a connection with the database
   - [x] Create a new Database in index
-  - [ ] Create a property 'Database' in the controller
-    - [ ] Just a generic Database, not specific information per controller.
-  - [ ] Be able to do a 'getAllStudents' in the view, or wherever you'd like as long as it works.
-    - [ ] Learn a bit more about PDO and how to utilize it.
+  - [x] Create a property 'Database' in the controller
+    - [x] Just a generic Database, not specific information per controller.
+  - [x] Be able to do a 'getAllCoaches' in the view, or wherever you'd like as long as it works.
+    - [x] Learn a bit more about PDO and how to utilize it.
 
 Once we're done with that TODO list, we can once again have a group meeting to further decide on small future goals and how to achieve them.
 The very first big goal we have, is to be able to show our database on the view.
 Once that's done and we're 1000% sure everything's connected, we can go ahead and get CRUD done.
+
+## Putting the C in CRUD
+Now that we're able to connect to the database, we can finally split up the work properly.
