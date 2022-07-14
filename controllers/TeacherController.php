@@ -13,7 +13,7 @@ class TeacherController
         $sqlAllDataTeachers = $this->databaseLoader->getConnection()->query("SELECT * FROM teacher_table");
         $allDataTeachers = [];
         while ($row = $sqlAllDataTeachers->fetch()){
-            $allDataTeachers[] = new Coach($row[0], $row[1], $row[2]);
+            $allDataTeachers[] = new Teacher ($row[0], $row[1], $row[2]);
         }
 
 
