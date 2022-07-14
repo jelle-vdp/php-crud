@@ -13,7 +13,7 @@
             <ul>
                 <li><a href="?page=students">Students</a></li>
                 <li><a href="?page=groups">Classes</a></li>
-                <li><a href="?page=coaches">Coaches</a></li>
+                <li><a href="?page=teachers">Teachers</a></li>
             </ul>
         </nav>
     <main>
