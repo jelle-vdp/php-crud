@@ -11,9 +11,13 @@ In order to start out with the assignment, we will clear the following TO-DO lis
 - [x] Create a router that selects different pages
 - [x] Create a .gitignore that ignores the .env, .gitignore, and if needed, the .idea/
 - [x] Add a .env.sample file to the repository
-- [ ] Create a connection with the database 
-  - [ ] Learn a bit more about PDO and how to utilize it.
 - [ ] **Show our database on the view**
+  - [ ] Create a connection with the database
+  - [x] Create a new Database in index
+  - [ ] Create a property 'Database' in the controller
+    - [ ] Just a generic Database, not specific information per controller.
+  - [ ] Be able to do a 'getAllStudents' in the view, or wherever you'd like as long as it works.
+    - [ ] Learn a bit more about PDO and how to utilize it.
 
 Once we're done with that TODO list, we can once again have a group meeting to further decide on small future goals and how to achieve them.
 The very first big goal we have, is to be able to show our database on the view.
