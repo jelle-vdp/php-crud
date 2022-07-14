@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-class Coach {
+class Teacher {
     private int $id;
     private string $name;
     private string $email;
