@@ -30,6 +30,24 @@ Now that we're able to connect to the database, we can start thinking of more co
 - [ ] Display the Database Table to the corresponding page
   - [ ] Discuss and decide on what kind of layout we want
 Once that display has been completely done by all the members in our team, we can start working on the must-have features of this assignment.
+
+## Plan of Attack!!
+Now that the database connection has been made, we will form our plan of attack!
+We will start out by creating a **production branch**
+In this branch, we will add a branch for every thing on the To-Do list.
+The tasks will be also split evenly **among us**.
+Besart will be responsible for the Teachers, Greet for the Students, and Jelle for the Groups.
+
+An example of this method of working is, if I want to add a new delete button to the Teacher table, I will create a branch called deleteButtonTeacher, finish this in this branch, and merge that branch into production.
+Since this is the way the pro's do it, this will also be the way we will teach it ourselves.
+
+Next, we will need to add the following: 
+- [ ] A delete button in the Student page
+- [ ] An add button in the Teacher Page
+- [ ] Get a connection on the Group Page
+- [ ] An Edit button in the Group page
+
+
 ## Must-have features
 You have to provide the following pages for Students, Teacher & Class.
 
@@ -100,5 +118,3 @@ MariaDB needs a different syntax than Mysql.
   should be replaced with:
   
   *ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;*
-
-
