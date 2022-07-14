@@ -1,6 +1,6 @@
 <?php
 
-class CoachesController
+class TeacherController
 {
     private DatabaseLoader $databaseLoader;
 
@@ -18,6 +18,6 @@ class CoachesController
 
 
 
-        require("views/coachesView.php");
+        require("views/teacherView.php");
     }
 }
