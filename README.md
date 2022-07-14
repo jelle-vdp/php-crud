@@ -23,5 +23,55 @@ Once we're done with that TODO list, we can once again have a group meeting to f
 The very first big goal we have, is to be able to show our database on the view.
 Once that's done and we're 1000% sure everything's connected, we can go ahead and get CRUD done.
 
-## Putting the C in CRUD
-Now that we're able to connect to the database, we can finally split up the work properly.
+## Putting the C-U-D in CRUD
+We were finally able to have visitors to the site READ our database, the R in CRUD is now done.
+This means that our database has been successfully connected to our MVC.
+Now that we're able to connect to the database, we can start thinking of more concrete, visual goals we would like to achieve.
+- [ ] Display the Database Table to the corresponding page
+  - [ ] Discuss and decide on what kind of layout we want
+Once that display has been completely done by all the members in our team, we can start working on the must-have features of this assignment.
+## Must-have features
+You have to provide the following pages for Students, Teacher & Class.
+
+-[ ] A general overview of all records of that entity in a table
+  -[ ] Each row should have a button to edit or delete the entity
+  -[ ] This page should have a "create new" button
+-[ ] A detailed overview of the selected entity
+  -[ ] This should include a button to delete this entity
+  -[ ] Edge case: A teacher cannot be removed if he is still assigned to a class
+  -[ ] Edge case: If you remove a class, make sure to remove the link between the students and the class.
+-[ ] A page to edit an existing entity
+-[ ] A page to create a new entity
+
+One way to make the button work, is by giving them a specific value to what they need to do and need to be.
+
+### Fields:
+On the general overview table you can yourself decide what would be useful information to show.
+
+On the detailed overview you have to provide the following information:
+
+#### Student
+-[ ] Name
+-[ ] Email
+-[ ] Class (with clickable link)
+-[ ] Assigned teacher (clickable link - relation via class)
+
+#### Teacher
+-[ ] Name
+-[ ] Email
+-[ ] List of all students currently assigned to him (clickable link)
+
+#### Class
+-[ ] Name class (Giertz, Lamarr, ...)
+-[ ] Location (Antwerp, Gent, Genk, Brussels, Liege)
+-[ ] Assigned teacher (clickable link)
+-[ ] List of assigned students (clickable link)
+
+## Creating the Connection to the Database
+Just like the previous assignment, this exercise was a toughie.
+BUt thanks to this exercise, I have gotten a better understanding of how connecting to the database works.
+
+Install Composer (check if installed by writing 'composer -v' in command line)
+In command prompt, go to folder of this exercise, and run 'composer install'
+In datagrip, run MySql as script -> Creates Database for you
+Check if database connection works by opening localhost and going to 'Teachers'.
