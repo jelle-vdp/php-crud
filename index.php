@@ -5,10 +5,13 @@
     require 'models/Student.php';
     require 'models/Group.php';
     require 'models/Coach.php';
+    require ('models/DatabaseLoader.php');
 
     require 'controllers/StudentsController.php';
     require 'controllers/GroupsController.php';
     require 'controllers/CoachesController.php';
+
+    new DatabaseLoader();
 
     $controller = new StudentsController();
     
