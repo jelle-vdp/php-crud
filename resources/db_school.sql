@@ -31,7 +31,8 @@ CREATE TABLE `group_table` (
   UNIQUE KEY `group_table_id_uindex` (`id`),
   KEY `group_table_teacher_table_id_fk` (`teacher_id`),
   CONSTRAINT `group_table_teacher_table_id_fk` FOREIGN KEY (`teacher_id`) REFERENCES `teacher_table` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -61,7 +62,8 @@ CREATE TABLE `student_table` (
   UNIQUE KEY `student_table_email_uindex` (`email`),
   KEY `student_table_group_table_id_fk` (`group_id`),
   CONSTRAINT `student_table_group_table_id_fk` FOREIGN KEY (`group_id`) REFERENCES `group_table` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,7 +90,8 @@ CREATE TABLE `teacher_table` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `teacher_table_id_uindex` (`id`),
   UNIQUE KEY `teacher_table_email_uindex` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
