@@ -1,16 +1,27 @@
 <?php
 
 require("views/includes/header.php");
-
-foreach ($this->allTeachers as $dataTeacher) {
+?>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+<?php
+    foreach ($this->allTeachers as $dataTeacher) {
     $teacherName = ucfirst($dataTeacher->getName());
     $teacherID = $dataTeacher->getID();
     $teacherEmail = $dataTeacher->getEmail();
-    echo $teacherName . " has Coach ID: " . $teacherID ."and their email-adress is: " . $teacherEmail . "<br>";
+    echo '      <tr>
+            <td> ' . $teacherName . '</td>
+            <td>' . $teacherID . '</td>
+            <td>' . $teacherEmail . '</td>
+        </tr>';
 }
 
 ?>
-
+    </table>
 
 
 <h1>Teachers</h1>
