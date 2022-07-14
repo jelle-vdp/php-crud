@@ -45,6 +45,19 @@ You have to provide the following pages for Students, Teacher & Class.
 
 One way to make the button work, is by giving them a specific value to what they need to do and need to be.
 
+````
+<form action="/action_page.php" method="get">
+  Choose your favorite subject:
+  <button name="delete" type="submit" value="getTeacherName()">HTML</button>
+  <button name="subject" type="submit" value="fav_CSS">CSS</button>
+
+-> Add queries in different functions
+-> In the Render, add if functions to call on different functions
+	-> if ($_GET = "delete") {
+		 call the function to delete the entire row by the value that was given by the user}
+->Now we need to figure out how to update information in a table, what do we need to add for the user to let them change a single value in the table
+````
+
 ### Fields:
 On the general overview table you can yourself decide what would be useful information to show.
 
