@@ -9,14 +9,6 @@ class TeacherController
         $this->databaseLoader = new DatabaseLoader();
     }
 
-    public function getAllDataTeachers () {
-        $sqlAllDataTeachers = $this->databaseLoader->getConnection()->query("SELECT * FROM teacher_table");
-        $allDataTeachers = [];
-        while ($row = $sqlAllDataTeachers->fetch()){
-            $allDataTeachers[] = new Teacher ($row['id'], $row['name'], $row['email']);
-        }
-        $this->allTeachers = $allDataTeachers;
-    }
 
     public function render($get, $post)
     {
@@ -25,5 +17,14 @@ class TeacherController
 
 
         require("views/teacherView.php");
+    }
+
+    public function getAllDataTeachers () {
+        $sqlAllDataTeachers = $this->databaseLoader->getConnection()->query("SELECT * FROM teacher_table");
+        $allDataTeachers = [];
+        while ($row = $sqlAllDataTeachers->fetch()){
+            $allDataTeachers[] = new Teacher ($row['id'], $row['name'], $row['email']);
+        }
+        $this->allTeachers = $allDataTeachers;
     }
 }
