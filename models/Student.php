@@ -12,13 +12,16 @@ class Student extends Teacher
         $this->groupId = $groupId;
     }
 
+    public function render ($get, $post){
+
+    }
 
     /**
      * @return int
      */
     public function getGroupId(): int
     {
-        return $this->groupIdId;
+        return $this->groupId;
     }
 
 }

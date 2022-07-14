@@ -75,3 +75,17 @@ Install Composer (check if installed by writing 'composer -v' in command line)
 In command prompt, go to folder of this exercise, and run 'composer install'
 In datagrip, run MySql as script -> Creates Database for you
 Check if database connection works by opening localhost and going to 'Teachers'.
+
+## problems we encountered
+1. Getting data from the database depends on the program you use.
+MariaDB needs a different syntax than Mysql.
+
+  string:
+  
+  *ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;*
+  
+  should be replaced with:
+  
+  *ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;*
+
+
