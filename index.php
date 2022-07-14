@@ -2,14 +2,14 @@
     declare(strict_types=1);
 
     require ('vendor/autoload.php');
-    require 'models/Student.php';
-    require 'models/Group.php';
-    require 'models/Teacher.php';
+    require ('models/Group.php');
+    require ('models/Teacher.php');
+    require ('models/Student.php');
     require ('models/DatabaseLoader.php');
 
-    require 'controllers/StudentsController.php';
-    require 'controllers/GroupsController.php';
-    require 'controllers/TeacherController.php';
+    require ('controllers/StudentsController.php');
+    require ('controllers/GroupsController.php');
+    require ('controllers/TeacherController.php');
 
     new DatabaseLoader();
 
@@ -19,7 +19,7 @@
         $controller = new GroupsController();
     } else if (isset($_GET['page']) && $_GET['page'] === 'students') {
         $controller = new StudentsController();
-    } else if (isset($_GET['page']) && $_GET['page'] === 'coaches') {
+    } else if (isset($_GET['page']) && $_GET['page'] === 'teachers') {
         $controller = new TeacherController();
     } 
 
