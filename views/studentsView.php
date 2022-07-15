@@ -23,8 +23,13 @@ require("views/includes/header.php");
                     <td>$studentEmail</td>
                     <td>$studentGroupId</td>
                     <td> 
-                        <form action='delete' method='post'>
+                        <form method='post'>
                         <button type='submit' name='delete' value=$studentId> delete student</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method='post'>
+                        <button type='submit' name='edit' value=$studentId> edit student</button>
                         </form>
                     </td>
                   </tr>";
