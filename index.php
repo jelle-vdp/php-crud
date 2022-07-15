@@ -21,6 +21,8 @@
         $controller = new StudentsController();
     } else if (isset($_GET['page']) && $_GET['page'] === 'teachers') {
         $controller = new TeacherController();
+    } else if (isset($_GET['page']) && $_GET['page'] === 'teachers') {
+        $controller = new TeacherController();
     } 
 
     $controller->render($_GET, $_POST);
