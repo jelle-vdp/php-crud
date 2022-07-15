@@ -18,8 +18,9 @@
             $groupId = $dataGroup->getID();
             $groupLocation = $dataGroup->getLocation();
             $groupTeacherId = $dataGroup->getTeacherId();
+            $groupTeacherName = $dataGroup->getTeacherName($groupTeacherId);
 
-            echo "<tr><td>$groupName</td><td>$groupLocation</td><td>$groupTeacherId</td></tr>";
+            echo "<tr><td>$groupName</td><td>$groupLocation</td><td>$groupTeacherName</td></tr>";
         }
 
         echo "</tbody></table>";

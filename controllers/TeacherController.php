@@ -13,9 +13,6 @@ class TeacherController
     public function render($get, $post)
     {
         $this->getAllDataTeachers();
-
-
-
         require("views/teacherView.php");
     }
 
