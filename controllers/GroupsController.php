@@ -23,7 +23,7 @@ class GroupsController {
 
     public function render($get, $post)
     {
-         $this->getAllDataGroups();
+        $this->getAllDataGroups();
 
         require("views/groupsView.php");
     }
