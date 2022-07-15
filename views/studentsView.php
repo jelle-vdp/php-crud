@@ -3,6 +3,8 @@
 require("views/includes/header.php");
 ?>
 
+<h1>Students</h1>
+
 <?php
 
     if(count($this->allStudents) === 0){
@@ -21,7 +23,7 @@ require("views/includes/header.php");
     }
 ?>
 
-<h1>Students</h1>
+
 
 <?php require("views/includes/footer.php");
 
