@@ -35,3 +35,6 @@ class TeacherController
         $this->databaseLoader->getConnection()->query("INSERT INTO teacher_table VALUES ( id ,'$name', '$email')");
     }
 }
+
+
+
