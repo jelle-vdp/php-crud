@@ -9,10 +9,14 @@ class TeacherController
         $this->databaseLoader = new DatabaseLoader();
     }
 
-
     public function render($get, $post)
     {
         $this->getAllDataTeachers();
+
+        if ($post["method"] = "create" && isset($post['name']) && isset($post['email']) ) {
+            $this->createNewTeacher($post);
+            $this->getAllDataTeachers();
+        }
         require("views/teacherView.php");
     }
 
@@ -24,4 +28,13 @@ class TeacherController
         }
         $this->allTeachers = $allDataTeachers;
     }
+
+    public function createNewTeacher ($post) {
+        $name = $post['name'];
+        $email = $post['email'];
+        $this->databaseLoader->getConnection()->query("INSERT INTO teacher_table VALUES ( id ,'$name', '$email')");
+    }
 }
+
+
+
