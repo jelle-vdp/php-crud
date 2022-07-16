@@ -15,8 +15,6 @@ foreach ($this->allStudents as $dataStudent) {
                         <input type='hidden'name='delete' value='$studentId'>
                         <button type='submit' name='confirm' value=true> yes, delete student</button>
                         <button type='submit' name='confirm' value=false> no </button>
-                        </form>
-
-<p><a href='?page=students&delete=$studentId&confirm=true'>Yes</a> <a href='?page=students'>No</a></p>";
+                        </form>";
     }
 }
