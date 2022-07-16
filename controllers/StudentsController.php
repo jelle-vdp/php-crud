@@ -14,18 +14,23 @@ class StudentsController
     {
         $this->getAllDataStudents();
 
-        if (!isset($post['delete']) && !isset($post['edit'])) {
-            require("./views/studentsView.php");
-        } else if (isset($post['delete']) && !isset($post['confirm'])) {
+
+        if (isset($post['delete']) && !isset($post['confirm'])) {
             require("views/deleteStudentView.php");
         } else if (isset($post['delete']) && $post['confirm'] === 'true') {
             $this->deleteStudent($post['delete']);
             $this->getAllDataStudents();
-           require("./views/studentsView.php");
+            require("./views/studentsView.php");
         } else if (isset($get['edit']) && !isset($post['confirm'])) {
             require("./views/editStudentView.php");
         } else if (isset($get['edit']) && isset($post['confirm'])) {
             $this->editStudent($get['edit']);
+            require("./views/studentsView.php");
+        } else if (isset($post['createStudent'])) {
+            $this->createNewStudent($post);
+            $this->getAllDataStudents();
+            require("./views/studentsView.php");
+        } else{
             require("./views/studentsView.php");
         }
     }
@@ -48,8 +53,15 @@ class StudentsController
         echo "TEST DELETE";
     }
 
+    public function createNewStudent($post)
+    {
+        $name = $post['name'];
+        $email = $post['email'];
+        $this->databaseLoader->getConnection()->query("INSERT INTO student_table (name, email, group_id) VALUES ('$name','$email', 1)");
+    }
+
 }
-     //$this->allStudents = $allDataStudents;
+//$this->allStudents = $allDataStudents;
 
 
 

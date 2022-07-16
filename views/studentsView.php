@@ -34,9 +34,24 @@ require("views/includes/header.php");
                     </td>
                   </tr>";
         }
-    echo "</tbody></table>";
+    echo "</tbody></table><br><br>";
     }
 ?>
+
+<form action="?page=students" method="post">
+    <label for="student"><b>Create a new student:</b></label><br><br>
+    <input type="text" name="name" placeholder="name">
+    <input type="text"  name="email" placeholder="email"><br><br>
+    <button name="createStudent" type="submit" value="create">Create</button>
+</form>
+
+
+
+
+
+
+
+
 
 
 
