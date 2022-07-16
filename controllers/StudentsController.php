@@ -21,10 +21,11 @@ class StudentsController
             $this->deleteStudent($post['delete']);
             $this->getAllDataStudents();
             require("./views/studentsView.php");
-        } else if (isset($get['edit']) && !isset($post['confirm'])) {
+        } else if (isset($post['edit']) && !isset($post['confirm'])) {
             require("./views/editStudentView.php");
-        } else if (isset($get['edit']) && isset($post['confirm'])) {
-            $this->editStudent($get['edit']);
+        } else if (isset($post['editStudent'])) {
+            $this->editStudent($post['student-id'],$post['name'],$post['email'],1);
+            $this->getAllDataStudents();
             require("./views/studentsView.php");
         } else if (isset($post['createStudent'])) {
             $this->createNewStudent($post);
@@ -58,6 +59,16 @@ class StudentsController
         $name = $post['name'];
         $email = $post['email'];
         $this->databaseLoader->getConnection()->query("INSERT INTO student_table (name, email, group_id) VALUES ('$name','$email', 1)");
+    }
+
+    public function editStudent($id, $name, $email, $groupId){
+
+        $id = intval($id);
+        $groupId = intval($groupId);
+
+        $query = "UPDATE student_table SET name = '$name', email = '$email', group_id = $groupId WHERE id = $id";
+        $preparedQuery = $this->databaseLoader->getConnection()->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+        $preparedQuery->execute();
     }
 
 }
