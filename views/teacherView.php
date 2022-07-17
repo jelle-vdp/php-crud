@@ -19,7 +19,17 @@ require("views/includes/header.php");
             <td> ' . $teacherName . '</td>
             <td>' . $teacherID . '</td>
             <td>' . $teacherEmail . '</td>
-        </tr>';
+        <td> 
+                        <form method="post">
+                        <button type="submit" name="delete" value='. $teacherID .' >Delete Teacher</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post">
+                        <button type="submit" name="edit" value= ' . $teacherID  . ' >Edit Teacher</button>
+                        </form>
+                    </td>
+                  </tr>';
 }
 
 ?>
@@ -32,11 +42,5 @@ require("views/includes/header.php");
     <input type="text" name="name" placeholder="Teacher's name"><br>
     <input type="text"  name="email" placeholder="teacher's email"><br>
     <button name="method" type="submit" value="create">Create</button>
-
-    <?php
-    if (isset($_POST["name"])) {
-        var_dump($_POST);
-    }    ?>
-
 
 <?php require("views/includes/footer.php");
