@@ -31,9 +31,20 @@ class TeacherController
             require("./views/teacherView.php");
         }
 
+        else if (isset($post['edit']) && !isset($post['confirm'])) {
+            require("views/editTeacherView.php");
+        }
+
+        else if (isset($post['id']) && isset($post['rename']) && isset($post['email'])) {
+            $this->editTeacher($post['id'], $post['rename'], $post['email']);
+            $this->getAllDataTeachers();
+            require("views/teacherView.php");
+        }
+
         else {
             require("./views/teacherView.php");
         }
+
     }
 
     public function getAllDataTeachers () {
@@ -55,6 +66,16 @@ class TeacherController
     {
         $this->databaseLoader->getConnection()->query("DELETE FROM teacher_table WHERE id = $id");
     }
+
+    public function editTeacher($id, $rename, $email){
+        $id = intval($id);
+
+        $query = "UPDATE teacher_table SET name = '$rename', email = '$email' WHERE id = $id";
+        $preparedQuery = $this->databaseLoader->getConnection()->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+        $preparedQuery->execute();
+    }
+
+
 }
 
 
