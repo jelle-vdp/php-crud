@@ -1,8 +1,9 @@
+<?php
 // MAIN GROUPS VIEW:
 // - a table of all groups in the database with an edit and delete button next to each group
 // - a standalone form to add a new group
 
-<?php
+
     require("views/includes/header.php");
 ?>
 
@@ -31,9 +32,10 @@
         echo "</tbody></table>";
     }
 
-    ?>
+    
 
-    // function to create a new group //
+    // form to create a new group //
+    ?>
     <p>Create a new group</p>
     <form method="get">
         <input type="hidden" name="page" value="groups">

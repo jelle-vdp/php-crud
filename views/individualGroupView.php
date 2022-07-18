@@ -1,7 +1,8 @@
+<?php
 // INDIVIDUAL GROUP VIEW:
 // - includes information on the location of the group and the name of the teacher
 
-<?php
+    require("views/includes/header.php");
 
     foreach ($this->allGroups as $dataGroup) {
 
@@ -15,3 +16,5 @@
             echo "<p>$groupName is based in $groupLocation and has $groupTeacherName as teacher.</p>";
         }
     }
+
+    require("views/includes/footer.php");

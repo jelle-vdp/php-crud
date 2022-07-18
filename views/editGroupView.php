@@ -1,5 +1,11 @@
+<?php
 // EDIT GROUP VIEW:
 // - a form to edit the selected group with the current values inserted by default
+
+
+    require("views/includes/header.php");
+?>
+
 
 <?php
     foreach ($this->allGroups as $dataGroup) {
@@ -22,3 +28,6 @@
         }
     }
     echo "</select><button type='submit'>Edit</button></form>";
+
+    require("views/includes/footer.php");
+?>

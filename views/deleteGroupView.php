@@ -1,7 +1,11 @@
+
+<?php
 // DELETE GROUP VIEW:
 // - confirmation page where the user can confirm the deletion of the selected group
 
-<?php 
+
+    require("views/includes/header.php");
+
     foreach ($this->allGroups as $dataGroup) {
         if($dataGroup->getId() === intval($get['delete'])){
             $groupName = ucfirst($dataGroup->getName());
@@ -14,3 +18,5 @@
             echo "<p><a href='?page=groups&delete=$groupId&confirm=true'>Yes</a> <a href='?page=groups'>No</a></p>";
         }
     }
+    
+    require("views/includes/footer.php");
