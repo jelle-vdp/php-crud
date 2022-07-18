@@ -18,12 +18,15 @@ require("views/includes/header.php");
             $studentId = $dataStudent->getID();
             $studentEmail = $dataStudent->getEmail();
             $studentGroupId = $dataStudent->getGroupId();
+            $studentGroupName = $dataStudent->getGroupName($studentGroupId);
+
+
             echo "<tr>
                     <td>$studentId</td>
                     <td>$studentName</td>
                     <td>$studentEmail</td>
                     <td>$studentGroupId</td>
-                    <td>placeholder</td>
+                    <td>$studentGroupName</td>
                     <td>placeholder</td>
                     <td> 
                         <form method='post'>

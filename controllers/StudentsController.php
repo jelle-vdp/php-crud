@@ -51,7 +51,6 @@ class StudentsController
     public function deleteStudent($id)
     {
         $this->databaseLoader->getConnection()->query("DELETE FROM student_table WHERE id = $id");
-        echo "TEST DELETE";
     }
 
     public function createNewStudent($post)
