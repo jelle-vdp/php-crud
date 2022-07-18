@@ -127,6 +127,8 @@ MariaDB needs a different syntax than Mysql.
 #### Just sit right there
 ##### I'll tell you how we became the royalty of a town called BeCode
 
+![alt-text](resources/images/fresh-prince.gif)
+
 ### How we got started
 We started out by splitting up different tasks:
 * Besart made the Database
@@ -147,7 +149,7 @@ But just because the tasks were split up, doesn't mean we all worked separate fr
 When someone had some troubles, we used the power of **teamwork** to help each other out.
 This way, the person who had issues gets to learn how to fix them, while those helping also learn from the experience.
 
-## GitHub
+### GitHub
 Up until this point, we were all working on the main branch.
 But from here on out, we decided to create a new branch called 'production', and create separate branches for every functionality we wanted to add.
 Once someone was done with their separate branch, they merged it into production.
@@ -162,11 +164,52 @@ Once all tables were shown on the site, we once again made a new To-Do list.
 * Jelle was responsible for the 'Edit Entity' function
 * Greet was responsible for the 'Delete' function
 
-Per person:
-* What you did
-* How you did
-* What you struggled with
-* What you're proud of
+### The Story of Besart: Creating a new Entity
+I was responsible for adding the 'Create New' function.
+After creating a ton of headaches for myself, I was finally able to create a new teacher.
+
+The MVC structure was already done by this point, so I only had to add a field in the view for user input and the function that adds a new teacher.
+I started out by writing down my query in datagrip to achieve the desired result.
+Once I had the query, I wrote the function and added the query I wrote earlier, replacing some values for some variables.
+
+This is where I struggled the most.
+Why use many word when few code do trick:
+
+````
+$this->databaseLoader->getConnection()->query("INSERT INTO teacher_table VALUES ( id ,' . " . ' .$name. ' . " . ', ' . " . ' .$email. ' . " . ')");
+````
+
+````
+$this->databaseLoader->getConnection()->query("INSERT INTO teacher_table VALUES ( id ,'$name', '$email')");
+````
+
+What I am most proud of, is the things I learned during this assignment.
+We were able to make a database that is fully CRUD-dable (no idea if that's an actual word but Josh Darnit does that 'word' do the job).
+
+### Story of Jelle: Edit Entities
+What I did:
+  - made the boilerplate maps, created the header & footer includes
+  - made the controller, views & model for the groups
+  - focussed specificly on the 'edit' functionality
+  - included all the other functionality by looking at teammembers code
+
+How I did it:
+  - check the code 😉
+
+What I struggled with
+- running the local database, decided to download DataGrip so my teammembers could help out
+- ran into some weird PDO errors but with the help of the coaches I managed to solve them
+
+What I'm proud of:
+- we made the whole crud thing work despite the time restraints
+
+### The Story of Greet: Deleting Entities
+I started with reading some info about CRUD.
+* my task was creating the delete function
+* The function itself was easy to find, but I struggled some time looking up what should go where. (controller, model, view) and how it was all connected.
+Luckily Jelle and Besart were able to help me on my way
+* in the end it worked
+
 
 ### What we learned
 * How to effectively use Github
