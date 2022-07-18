@@ -18,7 +18,7 @@ require("views/includes/header.php");
             $studentId = $dataStudent->getID();
             $studentEmail = $dataStudent->getEmail();
             $studentGroupId = $dataStudent->getGroupId();
-            $studentGroupName = $dataStudent->getGroupName($studentGroupId);
+            $studentGroupName = $dataStudent->getStudentGroupName($studentGroupId);
            /* $studentTeacher = $dataStudent->getStudentTeacher($studentGroupId);*/
 
 

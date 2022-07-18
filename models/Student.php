@@ -30,7 +30,7 @@ class Student extends Teacher
      * @return string
      * @desc name of class/group
      */
-    public function getGroupName($groupId): string
+    public function getStudentGroupName($groupId): string
     {
         $sqlGroupName = $this->databaseLoader->getConnection()->query("SELECT name FROM group_table WHERE id= $groupId");
         $studentGroupName = $sqlGroupName->fetch()['name'];

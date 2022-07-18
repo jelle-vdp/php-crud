@@ -1,4 +1,4 @@
-# Aww CRUD, here we go again
+git # Aww CRUD, here we go again
 This is a team assignment which will teach us how to connect to a database, write a simple Create, Read, Update and Delete application *and* how to use a provided MVC structure to work into.
 
 Learning all that stuff, combined with working in group and improving our git behaviour, will make this assignment a *spicy one*.
