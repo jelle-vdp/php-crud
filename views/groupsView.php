@@ -30,17 +30,19 @@
     ?>
 
     <p>Create a new group</p>
-    <form action="?page=groups" method="post">
+    <form action="?page=groups" method="get">
+        <input type="hidden" name="page" value="groups">
+        <input type="hidden" name="group-new" value="true">
         <label for="group-name">Group name:</label>
         <input type="text" name="group-name" id="group-name">
         <label for="group-location">Group location:</label>
         <input type="text" name="group-location" id="group-location">
         <label for="group-teacher">Group teacher:</label>
         <select id="group-teacher" name="group-teacher">
-            <?php foreach ($this->allGroups as $dataGroup) {
-                $groupTeacherId = $dataGroup->getTeacherId();
-                $groupTeacherName = $dataGroup->getTeacherName($groupTeacherId);
-                echo "<option value='$groupTeacherId'>$groupTeacherName</option>";
+            <?php foreach ($this->allTeachers as $teacher) {
+                $teacherId = $teacher->getId();
+                $teacherName = $teacher->getName($teacherId);
+                echo "<option value='$teacherId'>$teacherName</option>";
             } ?>
         </select>
         <button type="submit" value="create">Create</button>

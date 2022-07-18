@@ -3,6 +3,7 @@
 class GroupsController {
     private DatabaseLoader $databaseLoader;
     private array $allGroups;
+    private array $allTeachers;
 
     public function __construct(){
         $this-> databaseLoader = new DatabaseLoader();
@@ -17,8 +18,21 @@ class GroupsController {
         $this->allGroups = $allDataGroups;
     }
 
+    public function getAllDataTeachers () {
+        $sqlAllDataTeachers = $this->databaseLoader->getConnection()->query("SELECT * FROM teacher_table");
+        $allDataTeachers = [];
+        while ($row = $sqlAllDataTeachers->fetch()){
+            $allDataTeachers[] = new Teacher ($row['id'], $row['name'], $row['email']);
+        }
+        $this->allTeachers = $allDataTeachers;
+    }
+
     public function getAllGroups(){
         return $this->allGroups;
+    }
+
+    public function getAllTeachers(){
+        return $this->allTeachers;
     }
 
     public function deleteGroup($id){
@@ -35,26 +49,31 @@ class GroupsController {
         $preparedQuery->execute();
     }
 
-    public function createGroup ($post) {
-        $groupName = $post['group-name'];
-        $groupLocation = $post['group-location'];
-        $groupTeacher = $post['group-teacher'];
-        $this->databaseLoader->getConnection()->query("INSERT INTO group_table VALUES ( id ,'$groupName', '$groupLocation', $groupTeacher)");
+    public function createGroup ($get) {
+        $groupName = $get['group-name'];
+        $groupLocation = $get['group-location'];
+        $groupTeacher = $get['group-teacher'];
+
+        $preparedQuery = $this->databaseLoader->getConnection()->prepare("INSERT INTO group_table VALUES (id, '$groupName', '$groupLocation', '$groupTeacher')", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+        $preparedQuery->execute();
     }
 
     public function render($get, $post) {
         $this->getAllDataGroups();
-        if (!isset($get['delete']) && !isset($get['edit']) && !isset($get['class']) && !isset($get['teacher'])) {
-            if($post['group-name'] && $post['group-location'] && $post['group-teacher']){
-                $this->createGroup($post);
-                $this->getAllDataGroups();
-            }
+        if (!isset($get['delete']) && !isset($get['edit']) && !isset($get['class']) && !isset($get['teacher']) && !isset($get['group-new'])) {
+            $this->getAllDataTeachers();
             require("views/groupsView.php");
         } else if (isset($get['class'])) {
             require("views/individualGroupView.php");
+        } else if (isset($get['group-new'])) {
+            $this->createGroup($get);
+            $this->getAllDataTeachers();
+            $this->getAllDataGroups();
+            require("views/groupsView.php");
         } else if (isset($get['delete']) && !isset($get['confirm'])) {
             require("views/deleteGroupView.php");
         } else if (isset($get['edit']) && !isset($get['confirm'])) {
+            $this->getAllDataTeachers();
             require("views/editGroupView.php");
         } else if (isset($get['delete']) && isset($get['confirm'])) {
             $this->deleteGroup($get['delete']);
