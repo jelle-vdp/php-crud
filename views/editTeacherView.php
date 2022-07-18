@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+//loop to get all information of the teacher the user wants to edit
 foreach ($this->allTeachers as $dataTeacher) {
     if($dataTeacher->getId() === intval($post['edit'])){
         $teacherName = ucfirst($dataTeacher->getName());
