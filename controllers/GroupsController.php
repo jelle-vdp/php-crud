@@ -86,9 +86,11 @@ class GroupsController {
         } else if (isset($get['delete']) && isset($get['confirm'])) {
             $this->deleteGroup($get['delete']);
             $this->getAllDataGroups();
+            $this->getAllDataTeachers();
             require("views/groupsView.php");
         } else if (isset($get['group-id']) && isset($get['rename']) && isset($get['location']) && isset($get['teacher'])) {
             $this->editGroup($get['group-id'], $get['rename'], $get['location'], $get['teacher']);
+            $this->getAllDataTeachers();
             $this->getAllDataGroups();
             require("views/groupsView.php");
         }
