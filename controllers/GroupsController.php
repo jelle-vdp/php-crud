@@ -9,6 +9,7 @@ class GroupsController {
         $this-> databaseLoader = new DatabaseLoader();
     }
 
+    // filling the allGroups array with all groups from the database
     public function getAllDataGroups(){
         $sqlAllDataGroups = $this->databaseLoader->getConnection()->query("SELECT * FROM group_table");
         $allDataGroups = [];
@@ -18,6 +19,7 @@ class GroupsController {
         $this->allGroups = $allDataGroups;
     }
 
+    // filling the allTeaches array with all teachers from the database (needed for the dropdown when adding or editing a group)
     public function getAllDataTeachers () {
         $sqlAllDataTeachers = $this->databaseLoader->getConnection()->query("SELECT * FROM teacher_table");
         $allDataTeachers = [];
@@ -27,19 +29,23 @@ class GroupsController {
         $this->allTeachers = $allDataTeachers;
     }
 
+    // function to fetch all set groups  
     public function getAllGroups(){
         return $this->allGroups;
     }
 
+    // function to fetch all set teachers
     public function getAllTeachers(){
         return $this->allTeachers;
     }
 
+    // function to delete a group from the database
     public function deleteGroup($id){
         $this->databaseLoader->getConnection()->query("UPDATE student_table SET group_id = NULL WHERE group_id = $id");
         $this->databaseLoader->getConnection()->query("DELETE FROM group_table WHERE id = $id");
     }
 
+    // function to edit a group in the database, this part can definitly benefit from some refactoring
     public function editGroup($id, $rename, $location, $teacherId){
         $teacherId = intval($teacherId);
         $id = intval($id);
@@ -49,6 +55,7 @@ class GroupsController {
         $preparedQuery->execute();
     }
 
+    // function to add a new group to the database
     public function createGroup ($get) {
         $groupName = $get['group-name'];
         $groupLocation = $get['group-location'];
@@ -58,6 +65,7 @@ class GroupsController {
         $preparedQuery->execute();
     }
 
+    // function to decide which view to show depending on the GET request(s)
     public function render($get, $post) {
         $this->getAllDataGroups();
         if (!isset($get['delete']) && !isset($get['edit']) && !isset($get['class']) && !isset($get['teacher']) && !isset($get['group-new'])) {

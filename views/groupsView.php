@@ -1,16 +1,20 @@
+// MAIN GROUPS VIEW:
+// - a table of all groups in the database with an edit and delete button next to each group
+// - a standalone form to add a new group
+
 <?php
-
     require("views/includes/header.php");
-
 ?>
 
 <h1>Classes</h1>
 
 <?php
-
+    // show a message when there are no groups in the database
     if(count($this->allGroups) === 0){
         echo "<p>No groups found</p>";
-    } else {
+    } 
+    // else create table with all groups, including an edit / delete button for each seperate entity
+    else {
         echo "<table><thead><tr><th>Name</th><th>Location</th><th>Teacher</th><th></th></tr></thead><tbody>";
 
         foreach ($this->allGroups as $dataGroup) {
@@ -29,8 +33,9 @@
 
     ?>
 
+    // function to create a new group //
     <p>Create a new group</p>
-    <form action="?page=groups" method="get">
+    <form method="get">
         <input type="hidden" name="page" value="groups">
         <input type="hidden" name="group-new" value="true">
         <label for="group-name">Group name:</label>

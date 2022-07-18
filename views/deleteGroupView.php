@@ -1,6 +1,7 @@
-<?php
+// DELETE GROUP VIEW:
+// - confirmation page where the user can confirm the deletion of the selected group
 
-    
+<?php 
     foreach ($this->allGroups as $dataGroup) {
         if($dataGroup->getId() === intval($get['delete'])){
             $groupName = ucfirst($dataGroup->getName());

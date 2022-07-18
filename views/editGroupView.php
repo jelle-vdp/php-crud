@@ -1,7 +1,7 @@
-<?php
+// EDIT GROUP VIEW:
+// - a form to edit the selected group with the current values inserted by default
 
-    $previousTeacher = 0;
-    
+<?php
     foreach ($this->allGroups as $dataGroup) {
         if($dataGroup->getId() === intval($get['edit'])){
             $groupName = ucfirst($dataGroup->getName());
@@ -21,5 +21,4 @@
             }
         }
     }
-    
     echo "</select><button type='submit'>Edit</button></form>";
