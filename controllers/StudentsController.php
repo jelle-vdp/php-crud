@@ -36,6 +36,7 @@ class StudentsController
         }
     }
 
+//functions called bij render
 
     public function getAllDataStudents()
     {
@@ -51,7 +52,6 @@ class StudentsController
     public function deleteStudent($id)
     {
         $this->databaseLoader->getConnection()->query("DELETE FROM student_table WHERE id = $id");
-        echo "TEST DELETE";
     }
 
     public function createNewStudent($post)
@@ -72,7 +72,7 @@ class StudentsController
     }
 
 }
-//$this->allStudents = $allDataStudents;
+
 
 
 

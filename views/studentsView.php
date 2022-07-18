@@ -10,7 +10,7 @@ require("views/includes/header.php");
     if(count($this->allStudents) === 0){
         echo "<p>No students found</p>";
     } else {
-        echo "<table><thead><tr><th>Id</th><th>Name</th><th>e-mail</th><th>group_id</th<th>group</th><th>teacher</th></tr></thead><tbody>";
+        echo "<table><thead><tr><th>Id</th><th>Name</th><th>e-mail</th><th>group_id</th<th>group</th><!--<th>teacher</th>--></tr></thead><tbody>";
 
 
         foreach ($this->allStudents as $dataStudent) {
@@ -18,13 +18,16 @@ require("views/includes/header.php");
             $studentId = $dataStudent->getID();
             $studentEmail = $dataStudent->getEmail();
             $studentGroupId = $dataStudent->getGroupId();
+            $studentGroupName = $dataStudent->getGroupName($studentGroupId);
+           /* $studentTeacher = $dataStudent->getStudentTeacher($studentGroupId);*/
+
+
             echo "<tr>
                     <td>$studentId</td>
                     <td>$studentName</td>
                     <td>$studentEmail</td>
                     <td>$studentGroupId</td>
-                    <td>placeholder</td>
-                    <td>placeholder</td>
+                    <td>$studentGroupName</td>
                     <td> 
                         <form method='post'>
                         <button type='submit' name='delete' value=$studentId> delete student</button>
@@ -40,6 +43,9 @@ require("views/includes/header.php");
     echo "</tbody></table><br><br>";
     }
 ?>
+
+
+<!-- form to edit the students-->
 
 <form action="?page=students" method="post">
     <label for="student"><b>Create a new student:</b></label><br><br>
