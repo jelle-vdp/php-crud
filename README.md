@@ -27,8 +27,8 @@ Once that's done and we're 1000% sure everything's connected, we can go ahead an
 We were finally able to have visitors to the site READ our database, the R in CRUD is now done.
 This means that our database has been successfully connected to our MVC.
 Now that we're able to connect to the database, we can start thinking of more concrete, visual goals we would like to achieve.
-- [ ] Display the Database Table to the corresponding page
-  - [ ] Discuss and decide on what kind of layout we want
+- [x] Display the Database Table to the corresponding page
+  - [x] Discuss and decide on what kind of layout we want
 Once that display has been completely done by all the members in our team, we can start working on the must-have features of this assignment.
 
 ## Plan of Attack!!
@@ -42,24 +42,24 @@ An example of this method of working is, if I want to add a new delete button to
 Since this is the way the pro's do it, this will also be the way we will teach it ourselves.
 
 Next, we will need to add the following: 
-- [ ] A delete button in the Student page
-- [ ] An add button in the Teacher Page
-- [ ] Get a connection on the Group Page
-- [ ] An Edit button in the Group page
+- [x] A delete button in the Student page
+- [x] An add button in the Teacher Page
+- [x] Get a connection on the Group Page
+- [x] An Edit button in the Group page
 
 
 ## Must-have features
 You have to provide the following pages for Students, Teacher & Class.
 
-- [ ] A general overview of all records of that entity in a table
-  - [ ] Each row should have a button to edit or delete the entity
-  - [ ] This page should have a "create new" button
+- [x] A general overview of all records of that entity in a table
+  - [x] Each row should have a button to edit or delete the entity
+  - [x] This page should have a "create new" button
 - [ ] A detailed overview of the selected entity
   - [ ] This should include a button to delete this entity
   - [ ] Edge case: A teacher cannot be removed if he is still assigned to a class
   - [ ] Edge case: If you remove a class, make sure to remove the link between the students and the class.
-- [ ] A page to edit an existing entity
-- [ ] A page to create a new entity
+- [x] A page to edit an existing entity
+- [x] A page to create a new entity
 
 One way to make the button work, is by giving them a specific value to what they need to do and need to be.
 
@@ -82,25 +82,27 @@ On the general overview table you can yourself decide what would be useful infor
 On the detailed overview you have to provide the following information:
 
 #### Student
-- [ ] Name
-- [ ] Email
+- [x] Name
+- [x] Email
 - [ ] Class (with clickable link)
 - [ ] Assigned teacher (clickable link - relation via class)
 
 #### Teacher
-- [ ] Name
-- [ ] Email
+- [x] Name
+- [x] Email
 - [ ] List of all students currently assigned to him (clickable link)
 
 #### Class
-- [ ] Name class (Giertz, Lamarr, ...)
-- [ ] Location (Antwerp, Gent, Genk, Brussels, Liege)
+- [x] Name class (Giertz, Lamarr, ...)
+- [x] Location (Antwerp, Gent, Genk, Brussels, Liege)
 - [ ] Assigned teacher (clickable link)
+  - [x] Assigned Teacher shows
+  - [ ] Clickable link
 - [ ] List of assigned students (clickable link)
 
 ## Creating the Connection to the Database
 Just like the previous assignment, this exercise was a toughie.
-BUt thanks to this exercise, I have gotten a better understanding of how connecting to the database works.
+But thanks to this exercise, I have gotten a better understanding of how connecting to the database works.
 
 Install Composer (check if installed by writing 'composer -v' in command line)
 In command prompt, go to folder of this exercise, and run 'composer install'
@@ -118,3 +120,85 @@ MariaDB needs a different syntax than Mysql.
   should be replaced with:
   
   *ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;*
+  
+# This is a story all about how
+## Our CRUD and MVC were flipped-turned upside down
+### And I'd like to take a minute
+#### Just sit right there
+##### I'll tell you how we became the royalty of a town called BeCode
+
+### How we got started
+We started out by splitting up different tasks:
+* Besart made the Database
+* Jelle made the index and boilerplate MVC
+* Greet was responsible for the Composer and researching how to set up a connection
+
+Once these steps were done, we collectively worked on getting a connection from the database to the view.
+We also assigned Besart to be the designated README enthusiast, while also setting up our gitignores so no unecessary files were added to the repository.
+
+### To-Do #1
+When everything we had to do collectively was done, we created a new to-do list.
+Our goal was to show a table per subject.
+Besart had to show the table of the Teachers, Greet of the Students, and Jelle for the Classes.
+
+Our goal to work this way, was for everyone to work with the MVC, and not have a single person be responsible for the Model, one for the View and one for the Controller.
+Every single on our goals and To-Do's was made with wanting to learn and improve in mind.
+But just because the tasks were split up, doesn't mean we all worked separate from one another.
+When someone had some troubles, we used the power of **teamwork** to help each other out.
+This way, the person who had issues gets to learn how to fix them, while those helping also learn from the experience.
+
+## GitHub
+Up until this point, we were all working on the main branch.
+But from here on out, we decided to create a new branch called 'production', and create separate branches for every functionality we wanted to add.
+Once someone was done with their separate branch, they merged it into production.
+Afterwards, they once again created a new branch for that specific function.
+
+We wanted to work this way, because Greet (and Koen) told us this is how it's done in a professional environment.
+And the best way to learn is to jump head-first into new challenges!
+
+### To-Do #2: Electric Boogaloo
+Once all tables were shown on the site, we once again made a new To-Do list.
+* Besart was responsible for the 'Create New' function
+* Jelle was responsible for the 'Edit Entity' function
+* Greet was responsible for the 'Delete' function
+
+Per person:
+* What you did
+* How you did
+* What you struggled with
+* What you're proud of
+
+### What we learned
+* How to effectively use Github
+* Communication
+* Helping each other is a valuable way to learn things yourself
+* MVC is not easy at all, but we're getting there!
+* Repetition is key! Because this is the second exercise we did with MVC and databases, this one went a lot more smoothly.
+
+### What we wanted to learn
+* PDO::prepare (how to safely get user input and put it in the database)
+* Link with detailed table
+* Linking teacher name to student
+* Understanding keys in the database on a deeper level
+* Subqueries
+* Look through each other's code collectively, and improve our own code where necessary
+
+### What we're proud of
+* TEAM SPIRIT!!!!!
+* Not done on time, but we all worked on this assignment in the weekend
+* Communication and responsibility
+* -> Scroll back to what we learned
+* Prioritising work (for example, ignoring styling in favor of functionality)
+
+
+
+
+
+
+
+
+
+
+
+
+
