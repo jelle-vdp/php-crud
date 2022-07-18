@@ -36,6 +36,7 @@ class StudentsController
         }
     }
 
+//functions called bij render
 
     public function getAllDataStudents()
     {
@@ -71,7 +72,7 @@ class StudentsController
     }
 
 }
-//$this->allStudents = $allDataStudents;
+
 
 
 

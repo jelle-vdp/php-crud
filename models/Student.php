@@ -28,12 +28,27 @@ class Student extends Teacher
 
     /**
      * @return string
+     * @desc name of class/group
      */
     public function getGroupName($groupId): string
     {
         $sqlGroupName = $this->databaseLoader->getConnection()->query("SELECT name FROM group_table WHERE id= $groupId");
         $studentGroupName = $sqlGroupName->fetch()['name'];
         return $studentGroupName;
+
     }
+
+    /**
+     * @desc function to show the teacher of the group (needs te be completed)
+     */
+
+    /*public function getStudentTeacher($groupId): string
+    {
+        $sqlStudentTeacher = $this->databaseLoader->getConnection()->query("SELECT name FROM teacher_table tt JOIN group_table gt WHERE gt.id= $groupId");
+        $studentTeacher = $sqlStudentTeacher->fetch()['name'];
+        return $studentTeacher;
+    }*/
+
+
 
  }
