@@ -35,9 +35,20 @@ class GroupsController {
         $preparedQuery->execute();
     }
 
+    public function createGroup ($post) {
+        $groupName = $post['group-name'];
+        $groupLocation = $post['group-location'];
+        $groupTeacher = $post['group-teacher'];
+        $this->databaseLoader->getConnection()->query("INSERT INTO group_table VALUES ( id ,'$groupName', '$groupLocation', $groupTeacher)");
+    }
+
     public function render($get, $post) {
         $this->getAllDataGroups();
         if (!isset($get['delete']) && !isset($get['edit']) && !isset($get['class']) && !isset($get['teacher'])) {
+            if($post['group-name'] && $post['group-location'] && $post['group-teacher']){
+                $this->createGroup($post);
+                $this->getAllDataGroups();
+            }
             require("views/groupsView.php");
         } else if (isset($get['class'])) {
             require("views/individualGroupView.php");
